@@ -38,41 +38,85 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var bodyParser = require("body-parser");
 var typeorm_1 = require("typeorm");
-var user_1 = require("./entity/user");
+var User_1 = require("./entity/User");
 // create typeorm connection
 typeorm_1.createConnection().then(function (connection) {
-    var userRepository = connection.getRepository(user_1.User);
+    var userRepository = connection.getRepository(User_1.User);
     // create and setup express app
     var app = express();
     app.use(bodyParser.json());
     // register routes
     app.get("/users", function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
+            var users;
             return __generator(this, function (_a) {
-                return [2 /*return*/, userRepository.find()];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, userRepository.find()];
+                    case 1:
+                        users = _a.sent();
+                        res.json(users);
+                        return [2 /*return*/];
+                }
             });
         });
     });
     app.get("/users/:id", function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
+            var user;
             return __generator(this, function (_a) {
-                return [2 /*return*/, userRepository.findOne(req.params.id)];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, userRepository.findOne(req.params.id)];
+                    case 1:
+                        user = _a.sent();
+                        res.json(user);
+                        return [2 /*return*/];
+                }
             });
         });
     });
     app.post("/users", function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var user;
+            var user, created;
             return __generator(this, function (_a) {
-                user = userRepository.create(req.body);
-                return [2 /*return*/, userRepository.save(user)];
+                switch (_a.label) {
+                    case 0:
+                        user = userRepository.create(req.body);
+                        return [4 /*yield*/, userRepository.save(user)];
+                    case 1:
+                        created = _a.sent();
+                        res.json(created);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    });
+    app.put("/users/:id", function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, userRepository.update(req.params.id, req.body)];
+                    case 1:
+                        _a.sent();
+                        res.json({
+                            message: 'Updated.'
+                        });
+                        return [2 /*return*/];
+                }
             });
         });
     });
     app.delete("/users/:id", function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, userRepository.remove(req.params.id)];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, userRepository.delete(req.params.id)];
+                    case 1:
+                        _a.sent();
+                        res.json({
+                            message: 'Deleted.'
+                        });
+                        return [2 /*return*/];
+                }
             });
         });
     });
