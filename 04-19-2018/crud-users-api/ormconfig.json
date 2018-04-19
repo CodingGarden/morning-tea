@@ -1,0 +1,8 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "database": "typeorm-user-test",
+  "entities": ["src/entity/*.js"],
+  "logging": true,
+  "synchronize": true
+}
