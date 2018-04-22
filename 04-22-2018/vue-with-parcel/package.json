@@ -1,0 +1,22 @@
+{
+  "name": "vue-with-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "w3cj <cj@null.computer>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^1.0.0",
+    "babel-preset-env": "^1.6.1",
+    "parcel-bundler": "^1.7.1",
+    "parcel-plugin-vue": "^1.5.0"
+  }
+}
