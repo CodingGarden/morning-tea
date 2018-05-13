@@ -1,0 +1,16 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "w3cj <cj@null.computer>",
+  "license": "MIT",
+  "dependencies": {
+    "clusterws": "^3.0.5",
+    "express": "^4.16.3"
+  }
+}
