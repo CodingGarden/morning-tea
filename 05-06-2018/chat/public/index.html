@@ -3,10 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://ez-css.now.sh">
+    <style>
+      #messages {
+        background: lightgray;
+        height: 500px;
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
     <h2>Hello World!</h2>
-    <script src="node_modules/clusterws-client-js/browser/clusterws.min.js" charset="utf-8"></script>
+    <main id="messages">
+      
+    </main>
+    <form>
+      <label for="username">username</label>
+      <input type="text" id="username" name="username">
+      <label for="message">message</label>
+      <input type="text" id="message" name="message">
+      <button type="submit">Send</button>
+    </form>
+    <script src="clusterws.min.js" charset="utf-8"></script>
     <script src="client.js" charset="utf-8"></script>
   </body>
 </html>
