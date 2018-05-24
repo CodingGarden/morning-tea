@@ -1,0 +1,26 @@
+{
+  "name": "vuido-demo",
+  "version": "1.0.0",
+  "description": "A Vuido project",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.config.js",
+    "start": "node ./dist/main.js",
+    "build:start": "npm run build && npm start"
+  },
+  "author": "CJ R <cj@null.computer>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "vuido": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "vue-loader": "^15.0.11",
+    "vue-template-compiler": "^2.5.16",
+    "vuido-template-compiler": "^0.1.0",
+    "webpack": "^3.12.0"
+  }
+}
