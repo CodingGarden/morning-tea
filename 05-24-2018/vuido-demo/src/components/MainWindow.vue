@@ -2,7 +2,7 @@
   <Window title="vuido-demo" width="400" height="100" margined v-on:close="exit">
     <Box>
       <Text>Enter your name:</Text>
-      <TextInput stretchy v-on:input="updateName($event)"/>
+      <TextInput stretchy v-model="text"/>
       <Button v-on:click="sayHello()">Say Hello</Button>
       <Text v-if="showMessage">Hello, {{ text }}</Text>
     </Box>
