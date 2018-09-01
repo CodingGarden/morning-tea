@@ -14,13 +14,13 @@
 
 ## TODO
 
-* [ ] Setup create-react-app v2
-* [ ] eject the config
-* [ ] Add/configure optional chaining plugin
+* [x] Setup create-react-app v2
+* [x] eject the config
+* [x] Add/configure optional chaining plugin
   * https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html
-* [ ] Configure Context API
-  * [ ] Provider
-  * [ ] Consumer
+* [x] Configure Context API
+  * [x] Provider
+  * [x] Consumer
 * [ ] Research to find a list of emoji names
 * [ ] Have a text box where the user enters their text
 * [ ] As the user types, when they press space,

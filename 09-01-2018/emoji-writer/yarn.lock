@@ -549,6 +549,13 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-catch-binding" "^7.0.0"
 
+"@babel/plugin-proposal-optional-chaining@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining/-/plugin-proposal-optional-chaining-7.0.0.tgz#3d344d4152253379b8758e7d041148e8787c4a9d"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-optional-chaining" "^7.0.0"
+
 "@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.46":
   version "7.0.0-beta.46"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.46.tgz#b422a602094d7feeea4a7b81e7e32d1687337123"
@@ -638,6 +645,12 @@
 "@babel/plugin-syntax-optional-catch-binding@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0.tgz#886f72008b3a8b185977f7cb70713b45e51ee475"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-optional-chaining@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.0.0.tgz#1e6ecba124310b5d3a8fc1e00d50b1c4c2e05e68"
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -3343,6 +3356,10 @@ emoji-regex@^6.1.0:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
 
+emoji.json@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/emoji.json/-/emoji.json-11.0.0.tgz#89b3bac18888aac708b54ea4d6cc0567a25c1bdb"
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -4074,13 +4091,6 @@ fs-write-stream-atomic@^1.0.8:
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
-
-fsevents@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.0.tgz#e11a5ff285471e4cc43ab9cd09bb7986c565dcdc"
-  dependencies:
-    nan "^2.9.2"
-    node-pre-gyp "^0.9.0"
 
 fsevents@^1.2.2, fsevents@^1.2.3:
   version "1.2.4"
@@ -6058,7 +6068,7 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
-needle@^2.2.0, needle@^2.2.1:
+needle@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/needle/-/needle-2.2.2.tgz#1120ca4c41f2fcc6976fd28a8968afe239929418"
   dependencies:
@@ -6151,21 +6161,6 @@ node-pre-gyp@^0.10.0:
     npm-packlist "^1.1.6"
     npmlog "^4.0.2"
     rc "^1.2.7"
-    rimraf "^2.6.1"
-    semver "^5.3.0"
-    tar "^4"
-
-node-pre-gyp@^0.9.0:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.9.1.tgz#f11c07516dd92f87199dbc7e1838eab7cd56c9e0"
-  dependencies:
-    detect-libc "^1.0.2"
-    mkdirp "^0.5.1"
-    needle "^2.2.0"
-    nopt "^4.0.1"
-    npm-packlist "^1.1.6"
-    npmlog "^4.0.2"
-    rc "^1.1.7"
     rimraf "^2.6.1"
     semver "^5.3.0"
     tar "^4"
@@ -7137,7 +7132,7 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
-rc@^1.0.1, rc@^1.1.6, rc@^1.1.7, rc@^1.2.7:
+rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   dependencies:
@@ -7173,7 +7168,7 @@ react-dev-utils@6.0.0-next.a671462c:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dom@16.4.2:
+react-dom@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
@@ -7186,64 +7181,7 @@ react-error-overlay@5.0.0-next.a671462c:
   version "5.0.0-next.a671462c"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.0.0-next.a671462c.tgz#e0671883358a8678a94cc8980e9848b2d3dabfb7"
 
-react-scripts@2.0.0-next.a671462c:
-  version "2.0.0-next.a671462c"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-2.0.0-next.a671462c.tgz#dde35739a6cf4f420fdc3425c059344d17cd42ee"
-  dependencies:
-    "@babel/core" "7.0.0-beta.46"
-    "@babel/runtime" "7.0.0-beta.46"
-    autoprefixer "8.5.0"
-    babel-core "7.0.0-bridge.0"
-    babel-eslint "8.2.3"
-    babel-jest "22.4.3"
-    babel-loader "8.0.0-beta.4"
-    babel-plugin-named-asset-import "1.0.0-next.a671462c"
-    babel-preset-react-app "4.0.0-next.a671462c"
-    bfj "5.2.0"
-    case-sensitive-paths-webpack-plugin "2.1.2"
-    chalk "2.4.1"
-    css-loader "0.28.11"
-    dotenv "5.0.1"
-    dotenv-expand "4.2.0"
-    eslint "4.19.1"
-    eslint-config-react-app "3.0.0-next.a671462c"
-    eslint-loader "2.0.0"
-    eslint-plugin-flowtype "2.46.3"
-    eslint-plugin-import "2.11.0"
-    eslint-plugin-jsx-a11y "6.0.3"
-    eslint-plugin-react "7.8.2"
-    file-loader "1.1.11"
-    fs-extra "5.0.0"
-    graphql "0.13.2"
-    graphql-tag "2.9.2"
-    html-webpack-plugin "3.2.0"
-    identity-obj-proxy "3.0.0"
-    jest "22.4.3"
-    loader-utils "^1.1.0"
-    mini-css-extract-plugin "^0.4.0"
-    object-assign "4.1.1"
-    optimize-css-assets-webpack-plugin "^4.0.1"
-    postcss-flexbugs-fixes "3.3.1"
-    postcss-loader "2.1.5"
-    promise "8.0.1"
-    raf "3.4.0"
-    react-dev-utils "6.0.0-next.a671462c"
-    resolve "1.6.0"
-    sass-loader "7.0.1"
-    style-loader "0.21.0"
-    svgr "1.9.2"
-    sw-precache-webpack-plugin "0.11.5"
-    thread-loader "1.1.5"
-    uglifyjs-webpack-plugin "1.2.5"
-    url-loader "1.0.1"
-    webpack "4.8.3"
-    webpack-dev-server "3.1.5"
-    webpack-manifest-plugin "2.0.3"
-    whatwg-fetch "2.0.4"
-  optionalDependencies:
-    fsevents "1.2.0"
-
-react@16.4.2:
+react@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:

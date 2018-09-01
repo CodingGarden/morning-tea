@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import emojiJson from 'emoji.json/emoji.json';
 import './App.css';
+import EmojiContext from './EmojiContext';
+import EmojiTextBox from './EmojiTextBox';
+
+const emojis = emojiJson.reduce((emojis, emoji) => {
+  emoji.keywords.split('|').map(keyword => {
+    emojis[keyword.trim()] = emojis[keyword.trim()] || [];
+    emojis[keyword.trim()].push(emoji.char);
+  });
+  return emojis;
+}, {});
 
 class App extends Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Hello Emojis! 👋</h1>
+        <EmojiContext.Provider value={{
+          emojis
+        }}>
+          <EmojiTextBox />
+        </EmojiContext.Provider>
       </div>
     );
   }
