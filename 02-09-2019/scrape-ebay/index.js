@@ -1,11 +1,17 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const URL = 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=nintendo+switch&_sacat=0&rt=nc&LH_BIN=1&_pgn=';
+// const URL = 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=nintendo+switch&_sacat=0&rt=nc&LH_BIN=1&_pgn=';
+
+const URL = 'https://www.ebay.com/b/Nintendo-Switch-Video-Game-Consoles/139971/bn_69455331';
 
 async function getResults(page_num, results = []) {
   console.log('Getting', page_num, 'results...');
-  const { data } = await axios.get(URL + page_num);
+  const { data } = await axios.get(URL + page_num, {
+    headers: {
+      accept: 'text/html'
+    }
+  });
   const $ = cheerio.load(data);
   const items = $('.s-item');
   items.each((index, item) => {
@@ -24,6 +30,8 @@ async function getResults(page_num, results = []) {
     });
   })
 
+  console.log(results);
+
   if (items.length === 60) {
     getResults(page_num + 1, results);
   } else {
@@ -31,7 +39,7 @@ async function getResults(page_num, results = []) {
   }
 }
 
-getResults(1);
+getResults('');
 
 function finished(results) {
   console.log('Got all results!!', results.length);
