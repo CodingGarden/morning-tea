@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "title": "coding-garden",
+      "author": "cj",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

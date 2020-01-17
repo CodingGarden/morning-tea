@@ -1,0 +1,13 @@
+{
+  "name": "heroku-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "post-buildeploy": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "keywords": [],
+  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "license": "MIT"
+}

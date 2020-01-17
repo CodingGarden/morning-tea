@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>🎄 Christmas List 🎄</title>
+  <link rel="stylesheet" href="https://ez-css.now.sh">
+  <style>
+    .received {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <main id="app">
+    <h1>{{title}}</h1>
+    <form @submit.prevent="addItem">
+      <label for="wish-item">Wish Item</label>
+      <input v-model="newItem" type="text" id="wish-item" name="wish_item">
+      <button>Add Item</button>
+    </form>
+    <ul>
+      <li v-for="{ id, name, received } in items" :key="id">
+        <div>
+          <h3
+            :class="{
+              received
+            }"
+          >
+            {{name}}
+          </h3>
+          <button @click="toggleReceived(id)">Toggle Received</button>
+          <button @click="removeItem(id)">Remove Item</button>
+        </div>
+      </li>
+    </ul>
+  </main>
+  <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
